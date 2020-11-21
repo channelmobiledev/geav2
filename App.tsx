@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {SafeAreaView, StyleSheet, StatusBar, View, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
