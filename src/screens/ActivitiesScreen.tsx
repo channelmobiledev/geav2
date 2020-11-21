@@ -1,11 +1,13 @@
 import React from 'react';
 import {Text, View} from 'react-native';
+import {NavigationState} from '@react-navigation/native';
+import COLORS from '../constants/colors';
 
 export interface Props {}
 
 interface State {}
 
-export class MapScreen extends React.Component<Props, State> {
+export class ActivitiesScreen extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
   }
