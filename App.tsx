@@ -6,7 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {ActivitiesScreen} from './src/screens/ActivitiesScreen';
 import {InfoScreen} from './src/screens/InfoScreen';
-import {MapScreen as MapScreen} from './src/screens/SettingsScreen';
+import {MapScreen as MapScreen} from './src/screens/MapScreen';
 import COLORS from './src/constants/colors';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
