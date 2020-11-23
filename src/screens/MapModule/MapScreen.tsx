@@ -1,7 +1,7 @@
 import React from 'react';
 import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
 import ImageZoom from 'react-native-image-pan-zoom';
-import COLORS from '../constants/colors';
+import COLORS from '../../constants/colors';
 
 export interface Props {
   mapAddress: string;
