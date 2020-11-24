@@ -7,22 +7,8 @@ export interface Props {
   mapAddress: string;
 }
 
-interface State {}
-
-export class MapScreen extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        {this.props.mapAddress ? this.showMapView() : this.showNoMapView()}
-      </View>
-    );
-  }
-
-  showMapView() {
+const MapScreen = (props: Props) => {
+  const showMapView = () => {
     return (
       <ImageZoom
         cropWidth={Dimensions.get('window').width}
@@ -32,19 +18,25 @@ export class MapScreen extends React.Component<Props, State> {
         <Image
           style={styles.mapContainer}
           source={{
-            uri: this.props.mapAddress,
+            uri: props.mapAddress,
           }}
         />
       </ImageZoom>
     );
-  }
+  };
 
-  showNoMapView() {
+  const showNoMapView = () => {
     return (
       <Text style={styles.noMapText}>There's no map on this event 🗺️</Text>
     );
-  }
-}
+  };
+
+  return (
+    <View style={styles.container}>
+      {props.mapAddress ? showMapView() : showNoMapView()}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -62,3 +54,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
 });
+
+export default MapScreen;

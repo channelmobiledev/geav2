@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react';
-import {MapScreen} from './MapScreen';
 import {RouteProp} from '@react-navigation/native';
+import MapScreen from './MapScreen';
 
 type RootStackParamList = {
   Map: {mapAddress: string};
