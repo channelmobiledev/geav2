@@ -4,9 +4,9 @@ import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {ActivitiesScreen} from './src/screens/ActivitiesScreen';
 import {InfoScreen} from './src/screens/InfoScreen';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import ActivitiesController from './src/screens/ActivitiesModule/ActivitiesController';
 import MapController from './src/screens/MapModule/MapController';
 import COLORS from './src/constants/colors';
 
@@ -51,7 +51,7 @@ function DashboardNav() {
           ),
         }}
         name="Activities"
-        component={ActivitiesScreen}
+        component={ActivitiesController}
       />
       <Tab.Screen
         options={{
