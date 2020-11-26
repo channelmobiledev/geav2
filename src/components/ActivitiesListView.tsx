@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {Avatar, Card, ListItem} from 'react-native-elements';
 import {RecyclerListView, DataProvider, LayoutProvider} from 'recyclerlistview';
 
+// TODO Implement the model
 type CardData = {
   name: string;
 };
@@ -45,10 +47,14 @@ const ActivitiesListView = () => {
 
   const rowRenderer = (type: any, data: any) => {
     return (
-      <View style={styles.container}>
-        <Text>Example data: {data.name}</Text>
-        <Text>Example message here</Text>
-      </View>
+      <ListItem style={styles.container} bottomDivider>
+        <Avatar source={{uri: 'https://source.unsplash.com/random'}} />
+        <ListItem.Content>
+          <ListItem.Title>{data.name}</ListItem.Title>
+          <ListItem.Subtitle>Example subtitle here :D</ListItem.Subtitle>
+        </ListItem.Content>
+        <ListItem.Chevron />
+      </ListItem>
     );
   };
 
@@ -68,7 +74,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     justifyContent: 'center',
-    margin: 5,
   },
 });
 
