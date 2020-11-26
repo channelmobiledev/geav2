@@ -10,13 +10,13 @@ export interface Props {}
 const ActivitiesScreen = (props: Props) => {
   return (
     <ViewPager style={styles.viewPager} initialPage={0}>
-      <View key="1">
+      <View key={1}>
         <ActivitiesListView />
       </View>
-      <View key="2">
+      <View key={2}>
         <ActivitiesListView />
       </View>
-      <View key="2">
+      <View key={3}>
         <ActivitiesListView />
       </View>
     </ViewPager>
