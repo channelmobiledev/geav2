@@ -34,7 +34,11 @@ const App = () => {
       <SafeAreaView style={styles.container}>
         <NavigationContainer theme={AppDefaultTheme}>
           <Stack.Navigator>
-            <Stack.Screen name="Dashboard" component={DashboardNav} />
+            <Stack.Screen
+              name="Dashboard"
+              component={DashboardNav}
+              options={({}) => ({headerShown: false})}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>
@@ -44,21 +48,66 @@ const App = () => {
 
 const DashboardNav = () => {
   const dummyData: ActivityModel[] = [
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
-    {name: 'Example'},
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
+    {
+      name: 'Example Activity Name',
+      dateTimeStart: new Date(2018, 5, 5, 17, 23, 42, 11),
+    },
   ];
 
   return (

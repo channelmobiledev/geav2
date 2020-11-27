@@ -10,7 +10,7 @@ export interface Props {
 const ActivitiesListView = (props: Props) => {
   const [dataProvider, setDataProvider] = useState(props.data);
 
-  const keyExtractor = (item, index) => index.toString();
+  const keyExtractor = (item: ActivityModel, index: number) => index.toString();
 
   const renderItem = ({item}) => {
     return (
@@ -18,7 +18,7 @@ const ActivitiesListView = (props: Props) => {
         <Avatar source={{uri: 'https://source.unsplash.com/random'}} />
         <ListItem.Content>
           <ListItem.Title>{item.name}</ListItem.Title>
-          <ListItem.Subtitle>10:00</ListItem.Subtitle>
+          <ListItem.Subtitle>{item.dateTimeStart.toString()}</ListItem.Subtitle>
         </ListItem.Content>
         <ListItem.Chevron />
       </ListItem>
