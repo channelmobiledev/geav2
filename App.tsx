@@ -9,6 +9,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import ActivitiesController from './src/screens/ActivitiesModule/ActivitiesController';
 import MapController from './src/screens/MapModule/MapController';
 import COLORS from './src/constants/colors';
+import ActivityModel from './src/models/ActivityModel';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -41,7 +42,25 @@ const App = () => {
   );
 };
 
-function DashboardNav() {
+const DashboardNav = () => {
+  const dummyData: ActivityModel[] = [
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+    {name: 'Example'},
+  ];
+
   return (
     <Tab.Navigator>
       <Tab.Screen
@@ -50,6 +69,7 @@ function DashboardNav() {
             <MaterialCommunityIcons name="bell" color={color} size={size} />
           ),
         }}
+        initialParams={{data: dummyData}}
         name="Activities"
         component={ActivitiesController}
       />
@@ -78,7 +98,7 @@ function DashboardNav() {
       />
     </Tab.Navigator>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

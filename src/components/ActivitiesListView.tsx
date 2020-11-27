@@ -1,57 +1,24 @@
 import React, {useState} from 'react';
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
-import {Avatar, Card, ListItem} from 'react-native-elements';
-import {RecyclerListView, DataProvider, LayoutProvider} from 'recyclerlistview';
+import {FlatList, StyleSheet} from 'react-native';
+import {Avatar, ListItem} from 'react-native-elements';
+import ActivityModel from '../models/ActivityModel';
 
-// TODO Implement the model
-type CardData = {
-  name: string;
-};
+export interface Props {
+  data: ActivityModel[];
+}
 
-const ActivitiesListView = () => {
-  let {width} = Dimensions.get('window');
+const ActivitiesListView = (props: Props) => {
+  const [dataProvider, setDataProvider] = useState(props.data);
 
-  let data = new DataProvider((r1, r2) => {
-    return r1 !== r2;
-  });
+  const keyExtractor = (item, index) => index.toString();
 
-  const [dataProvider, setDataProvider] = useState(
-    data.cloneWithRows([
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-      {name: 'Example'},
-    ]),
-  );
-
-  const layoutProvider = new LayoutProvider(
-    (index: number) => {
-      return index;
-    },
-    (type, dim) => {
-      dim.width = width;
-      dim.height = 70;
-    },
-  );
-
-  const rowRenderer = (type: any, data: any) => {
+  const renderItem = ({item}) => {
     return (
       <ListItem style={styles.container} bottomDivider>
         <Avatar source={{uri: 'https://source.unsplash.com/random'}} />
         <ListItem.Content>
-          <ListItem.Title>{data.name}</ListItem.Title>
-          <ListItem.Subtitle>Example subtitle here :D</ListItem.Subtitle>
+          <ListItem.Title>{item.name}</ListItem.Title>
+          <ListItem.Subtitle>10:00</ListItem.Subtitle>
         </ListItem.Content>
         <ListItem.Chevron />
       </ListItem>
@@ -60,10 +27,10 @@ const ActivitiesListView = () => {
 
   return (
     <>
-      <RecyclerListView
-        layoutProvider={layoutProvider}
-        dataProvider={dataProvider}
-        rowRenderer={rowRenderer}
+      <FlatList
+        keyExtractor={keyExtractor}
+        data={dataProvider}
+        renderItem={renderItem}
       />
     </>
   );
@@ -74,6 +41,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     justifyContent: 'center',
+    marginTop: 4,
+    marginBottom: 4,
   },
 });
 

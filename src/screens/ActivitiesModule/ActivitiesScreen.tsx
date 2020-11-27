@@ -1,23 +1,24 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {NavigationState} from '@react-navigation/native';
-import COLORS from '../../constants/colors';
+import {StyleSheet, View} from 'react-native';
 import ViewPager from '@react-native-community/viewpager';
 import ActivitiesListView from '../../components/ActivitiesListView';
+import ActivityModel from '../../models/ActivityModel';
 
-export interface Props {}
+export interface Props {
+  data: ActivityModel[];
+}
 
 const ActivitiesScreen = (props: Props) => {
   return (
     <ViewPager style={styles.viewPager} initialPage={0}>
       <View key={1}>
-        <ActivitiesListView />
+        <ActivitiesListView data={props.data} />
       </View>
       <View key={2}>
-        <ActivitiesListView />
+        <ActivitiesListView data={props.data} />
       </View>
       <View key={3}>
-        <ActivitiesListView />
+        <ActivitiesListView data={props.data} />
       </View>
     </ViewPager>
   );
