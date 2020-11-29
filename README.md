@@ -6,7 +6,7 @@
 
 ### Start the development server
 
-Noe: Development server (Metro) needs to run in conjuction with the Android / iOS project
+**Note**: Development server (Metro) needs to run in conjuction with the Android / iOS project
 
 ```bash
 npm start
