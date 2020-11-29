@@ -2,6 +2,10 @@
 
 ## 📱 Implementation of the Generic Event App with React Native + Typescript
 
+## Check the YouTube journey here
+
+[![Youtube Thumbnail of the video](http://img.youtube.com/vi/ZGQX0WSI64A/0.jpg)](https://www.youtube.com/playlist?list=PLZkwxCe0wc0nACzBDjnEflgC7KqU6BFDB)
+
 ## How to run the project
 
 ### Start the development server
