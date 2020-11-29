@@ -1,6 +1,6 @@
 # Generic Event App - Version 2
 
-## 📱 Implementation of the Generic Event App with React Native + Typescript
+📱 Implementation of the Generic Event App with React Native + Typescript
 
 ## Check the YouTube journey here
 
