@@ -1,14 +1,14 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {SafeAreaView, StyleSheet, StatusBar, View, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {ActivitiesScreen} from './src/screens/ActivitiesScreen';
 import {InfoScreen} from './src/screens/InfoScreen';
-import {MapScreen as MapScreen} from './src/screens/SettingsScreen';
-import COLORS from './src/constants/colors';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MapController from './src/screens/MapModule/MapController';
+import COLORS from './src/constants/colors';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -59,8 +59,9 @@ function DashboardNav() {
             <MaterialCommunityIcons name="map" color={color} size={size} />
           ),
         }}
+        initialParams={{mapAddress: 'https://source.unsplash.com/random'}}
         name="Map"
-        component={MapScreen}
+        component={MapController}
       />
       <Tab.Screen
         options={{
